@@ -1,6 +1,6 @@
 function convertDecimalToBinary(number) {
     if (typeof number !== 'number') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     let num = number;
     let binary = (num % 2).toString();
@@ -13,7 +13,7 @@ function convertDecimalToBinary(number) {
 
 function convertBinaryToDecimal(number) {
     if (typeof number !== 'number') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     let sum = 0;
     let numberToTheSecondPower = 0;

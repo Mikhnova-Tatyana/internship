@@ -1,17 +1,17 @@
-function defineSign(number) {
+function numberIsPositive(number) {
     if (typeof number !== 'number') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
 
     if((number >> 31) & 1) {
-        return 'Number is negative'
+        return false;
     } 
-    return 'Number is positive'   
+    return true;
 }
 
 function countBits(number) {
     if (typeof number !== 'number') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     const countBitsObject = {
         zeroBits: 0,
@@ -23,19 +23,19 @@ function countBits(number) {
         }
         else countBitsObject.zeroBits += 1;
     }
-    return countBitsObject
+    return countBitsObject;
 }
 
 function bitwiseInvert(number) {
     if (typeof number !== 'number') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
-    return (-number - 1)
+    return (-number - 1);
 }
 
 function bitwiseInvert(number) {
     if (typeof number !== 'number') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
-    return number ^ -1 
+    return number ^ -1 ;
 }

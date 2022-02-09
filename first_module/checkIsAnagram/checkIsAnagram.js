@@ -1,6 +1,6 @@
 function checkIsAnagram(firstWord, secondWord) {
     if (typeof firstWord !== 'string' || typeof secondWord !== 'string') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     if (firstWord.length !== secondWord.length) {
         return false;
@@ -13,7 +13,7 @@ function checkIsAnagram(firstWord, secondWord) {
 
 function countCharSum(word) {
     if (typeof word !== 'string') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     let charSum = 0;
     for (let i = 0; i < word.length; i++) {
@@ -25,7 +25,7 @@ function countCharSum(word) {
 
 function checkIsAnagram(firstWord, secondWord) {
     if (typeof firstWord !== 'string' || typeof secondWord !== 'string') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     if (firstWord.length !== secondWord.length) {
         return false;
@@ -43,7 +43,7 @@ function checkIsAnagram(firstWord, secondWord) {
 
 function getCharObject(word) {
     if (typeof word !== 'string') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     const charObject = {};
     word = word.toLowerCase();

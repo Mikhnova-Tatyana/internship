@@ -1,6 +1,6 @@
 function transposeMatrix(matrix) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < i; j++) {
@@ -14,7 +14,7 @@ function transposeMatrix(matrix) {
 
 function addMatrix(matrix1, matrix2) {
     if (!Array.isArray(matrix1) || !Array.isArray(matrix2)) {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     const matrixResult = [];
     for (let i = 0; i < matrix1.length; i++) {

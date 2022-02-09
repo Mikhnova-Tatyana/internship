@@ -12,16 +12,15 @@ function factorial(number) {
 
 function factorialRecursion(number) {
     if (typeof number !== 'number') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     if (number === 0) {
         return 1;
     }
     if (number != 1) {
         return number * factorialRecursion(number - 1);
-    } else {
-        return 1;
-    }
+    } 
+    return 1;
 }
 
 
@@ -29,7 +28,7 @@ const factorialRecursionMemo = (function () {
     const memo = {};
     return function factorial(number) {
         if (typeof number !== 'number') {
-            throw new Error('Invalid argument')
+            throw new Error('Invalid argument');
         }
         let result;
 

@@ -1,9 +1,9 @@
 function countMinToMaxSum(min, max, callback) {
     if (typeof min !== 'number' || typeof max !== 'number') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     if (typeof callback !== 'function') {
-        throw new Error('Callback is not a function')
+        throw new Error('Callback is not a function');
     }
     let sum = 0;
 
@@ -17,10 +17,10 @@ function countMinToMaxSum(min, max, callback) {
 
 function countMinToMaxSumRecurse(min, max, callback) {
     if (typeof min !== 'number' || typeof max !== 'number') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     if (typeof callback !== 'function') {
-        throw new Error('Callback is not a function')
+        throw new Error('Callback is not a function');
     }
     let sum = 0;
 

@@ -29,7 +29,7 @@ if (!Array.isArray(fibonacciArray)) {
 function fibonacciArrayRecurse(number, index, fibonacciArray) {
     if (!Array.isArray(fibonacciArray) || typeof number !== 'number' ||
         typeof index !== 'number') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     index = index || 1;
     fibonacciArray = fibonacciArray || [0, 1].splice(0, number);
@@ -48,7 +48,7 @@ const fibonacciArrayRecursionMemo = (function () {
 
     return function pushFibonacci(number, fibonacciArray) {
         if (!Array.isArray(fibonacciArray) || typeof number !== 'number') {
-            throw new Error('Invalid argument')
+            throw new Error('Invalid argument');
         }
 
         fibonacciArray = fibonacciArray || [];
