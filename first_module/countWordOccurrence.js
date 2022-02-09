@@ -1,6 +1,6 @@
 function countWordOccurrenceInSentence(sentence) {
     if (typeof sentence !== 'string') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     const words = arrayFromString(sentence);
     const wordsCountObject = {};
@@ -18,7 +18,7 @@ function countWordOccurrenceInSentence(sentence) {
 
 function arrayFromString(string) {
     if (typeof string !== 'string') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     const array = [];
     let temporaryString = '';

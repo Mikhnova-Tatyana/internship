@@ -40,3 +40,20 @@ function bitwiseInvert(number) {
     }
     return number ^ -1;
 }
+
+function bitwiseInvert(number) {
+    for (let i = 0; i < 32; i++) {
+        if (number & 1 << i){
+            number |= (0 << i); 
+        } else {
+            number |= (1 << i); 
+        } 
+    }  
+    return number
+}
+bitwiseInvert(5) 
+
+
+let x = 10;
+x |= (1 << 5);
+x ^= (1 << n);

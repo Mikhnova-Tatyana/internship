@@ -8,7 +8,7 @@ function convertDecimalToBinary(number) {
         num = parseInt(num / 2);
         binary = (num % 2) + (binary);
     }
-    return Number(binary)
+    return binary;
 }
 
 function convertBinaryToDecimal(number) {
