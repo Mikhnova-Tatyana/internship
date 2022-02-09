@@ -1,6 +1,6 @@
 function deleteMatrixRowElement(matrix) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     let counter = 0;
 
@@ -21,7 +21,7 @@ function deleteMatrixRowElement(matrix) {
 
 function deleteMatrixColumnElement(matrix) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix[i].length; j++) {

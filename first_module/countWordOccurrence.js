@@ -10,7 +10,7 @@ function countWordOccurrenceInSentence(sentence) {
         if (!(currentElement in wordsCountObject)) {
             wordsCountObject[currentElement] = 1;
         } else {
-            wordsCountObject[currentElement] += 1;
+            wordsCountObject[currentElement]++;
         }
     }
     return wordsCountObject;

@@ -1,9 +1,9 @@
 function countSumMatrixElements(matrix, callback) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     if (typeof callback !== 'function') {
-        throw new Error('Callback is not a function')
+        throw new Error('Callback is not a function');
     }
     let sum = 0;
 
@@ -20,10 +20,10 @@ function countSumMatrixElements(matrix, callback) {
 
 function countAmountMatrixElements(matrix, callback) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     if (typeof callback !== 'function') {
-        throw new Error('Callback is not a function')
+        throw new Error('Callback is not a function');
     }
     let filteredArray = [];
 

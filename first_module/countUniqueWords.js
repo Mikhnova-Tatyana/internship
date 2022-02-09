@@ -1,6 +1,6 @@
 function countUniqueWordsInSentence(sentence) {
     if (typeof sentence !== 'string') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     const words = arrayFromString(sentence);
     const wordsCountObj = {};
@@ -11,14 +11,14 @@ function countUniqueWordsInSentence(sentence) {
         if (!(currentEleement in wordsCountObj)) {
             wordsCountObj[currentEleement] = 1;
         } else {
-            wordsCountObj[currentEleement] += 1;
+            wordsCountObj[currentEleement]++;
         }
     }
 
     return (function () {
         for (let word in wordsCountObj) {
             if (wordsCountObj[word] === 1) {
-                uniqueWordsAmount += 1;
+                uniqueWordsAmount++;
             }
         }
         return uniqueWordsAmount;
@@ -28,7 +28,7 @@ function countUniqueWordsInSentence(sentence) {
 
 function arrayFromString(string) {
     if (typeof string !== 'string') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     let array = [];
     let temporaryString = '';

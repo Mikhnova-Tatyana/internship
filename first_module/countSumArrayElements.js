@@ -1,9 +1,9 @@
 function countSumArrayElements(array, callback) {
     if (!Array.isArray(array)) {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     if (typeof callback !== 'function') {
-        throw new Error('Callback is not a function')
+        throw new Error('Callback is not a function');
     }
     let sum = 0;
 
@@ -17,10 +17,10 @@ function countSumArrayElements(array, callback) {
 
 function countSumArrayElementsRecurse(array, callback, index) {
     if (!Array.isArray(array)) {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     if (typeof callback !== 'function') {
-        throw new Error('Callback is not a function')
+        throw new Error('Callback is not a function');
     }
     index = index || 0;
 

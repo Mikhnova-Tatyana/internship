@@ -22,10 +22,6 @@ let iterableFibonacciObject = {
 //     console.log(item);
 // }
 
-if (!Array.isArray(fibonacciArray)) {
-    throw new Error('Invalid argument')
-}
-
 function fibonacciArrayRecurse(number, index, fibonacciArray) {
     if (!Array.isArray(fibonacciArray) || typeof number !== 'number' ||
         typeof index !== 'number') {

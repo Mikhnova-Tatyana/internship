@@ -1,6 +1,6 @@
 function countFiguresInNumber(number) {
     if (typeof number !== 'number') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     const figures = [];
 
@@ -13,7 +13,7 @@ function countFiguresInNumber(number) {
 
 function countFiguresInNumberRecurse(number, counter) {
     if (typeof number !== 'number' || typeof counter !== 'number') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     counter = counter || 0;
 

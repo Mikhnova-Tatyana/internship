@@ -1,9 +1,9 @@
 function countAmountArrayElements(array, callback) {
     if (typeof array !== 'object' || array === null) {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     if (typeof callback !== 'function') {
-        throw new Error('Callback is not a function')
+        throw new Error('Callback is not a function');
     }
     let filteredArray = [];
 

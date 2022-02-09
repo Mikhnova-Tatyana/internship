@@ -1,6 +1,6 @@
 function factorial(number) {
     if (typeof number !== 'number') {
-        throw new Error('Invalid argument')
+        throw new Error('Invalid argument');
     }
     let result = 1;
     while (number) {

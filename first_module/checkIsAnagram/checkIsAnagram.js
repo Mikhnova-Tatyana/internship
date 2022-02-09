@@ -48,7 +48,7 @@ function getCharObject(word) {
     const charObject = {};
     word = word.toLowerCase();
     for (let char of word) {
-        charObject[char] = charObject[char] + 1 || 1;
+        charObject[char] = ++charObject[char] || 1;
     }
     return charObject;
 }
