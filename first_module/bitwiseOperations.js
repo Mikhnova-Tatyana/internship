@@ -53,6 +53,16 @@ function bitwiseInvert(number) {
 }
 bitwiseInvert(5) 
 
+const bitwiseNot2 = function (number) {
+    let result = 0;
+    for (let i = 0; i < 32; i++){
+        if (((number >> i) & 1) !== 1) {
+            result = result | (1<<i);
+        }
+    }
+    return result
+}
+
 
 let x = 10;
 x |= (1 << 5);
