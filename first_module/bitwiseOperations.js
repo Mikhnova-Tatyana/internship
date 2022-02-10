@@ -42,28 +42,11 @@ function bitwiseInvert(number) {
 }
 
 function bitwiseInvert(number) {
-    for (let i = 0; i < 32; i++) {
-        if (number & 1 << i){
-            number |= (0 << i); 
-        } else {
-            number |= (1 << i); 
-        } 
-    }  
-    return number
-}
-bitwiseInvert(5) 
-
-const bitwiseNot2 = function (number) {
-    let result = 0;
     for (let i = 0; i < 32; i++){
-        if (((number >> i) & 1) !== 1) {
-            result = result | (1<<i);
+        if (((number >> i) & 1) === 0) {
+            number ^= (0 << i);
         }
+        number ^= (1 << i);
     }
-    return result
+    return number;
 }
-
-
-let x = 10;
-x |= (1 << 5);
-x ^= (1 << n);
