@@ -23,13 +23,12 @@ function countSumArrayElementsRecurse(array, callback, index) {
         throw new Error('Callback is not a function');
     }
     index = index || 0;
+    let sum = array[index];
 
-    if (index > array.length) {
-        return 0;
-    }
-
-    if (callback(array[index])) {
-        return array[index] += countSumArrayElementsRecurse(array, callback, ++index);
-    }
-    return countSumArrayElementsRecurse(array, callback, ++index);
+    if (++index < array.length) {
+        if (callback(array[index])) {
+            sum += countSumArrayElementsRecurse(array, callback, index);
+        }
+    } 
+    return sum;
 }
