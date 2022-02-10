@@ -34,7 +34,6 @@ function countAmountMatrixElements(matrix, callback) {
             }
         }
     }
-    let result = filteredArray.length;
-    return result;
+    return filteredArray.length;;
 
 }
