@@ -14,16 +14,12 @@ function countUniqueWordsInSentence(sentence) {
             wordsCountObj[currentEleement]++;
         }
     }
-
     return (function () {
         for (let word in wordsCountObj) {
-            if (wordsCountObj[word] === 1) {
-                uniqueWordsAmount++;
-            }
+            wordsCountObj[word] === 1 && uniqueWordsAmount++;
         }
         return uniqueWordsAmount;
     })()
-
 }
 
 function arrayFromString(string) {
@@ -33,10 +29,10 @@ function arrayFromString(string) {
     let array = [];
     let temporaryString = '';
 
-    for (let i = 0; i <= string.length-1; i++) { 
+    for (let i = 0; i <= string.length - 1; i++) {
         if (string[i] !== ' ') {
             temporaryString += string[i];
-            if (i === string.length-1) {
+            if (i === string.length - 1) {
                 array.push(temporaryString);
             }
         } else {

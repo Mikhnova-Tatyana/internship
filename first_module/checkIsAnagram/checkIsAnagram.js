@@ -22,7 +22,6 @@ function countCharSum(word) {
     return charSum;
 }
 
-
 function checkIsAnagram(firstWord, secondWord) {
     if (typeof firstWord !== 'string' || typeof secondWord !== 'string') {
         throw new Error('Invalid argument');

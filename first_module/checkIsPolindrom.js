@@ -3,13 +3,13 @@ function checkIsPolindrom(string) {
         throw new Error('Invalid argument');
     }
     let semiLength = Math.floor(string.length / 2);
-    let i = 0; 
+    let index = 0;
 
-    while(i < semiLength) {
-        if (string[i] !== string[string.length - 1 - i]) {
+    while (index < semiLength) {
+        if (string[index] !== string[string.length - 1 - index]) {
             return false;
         }
-        i++;
-    } 
-    return true; 
+        index++;
+    }
+    return true;
 }

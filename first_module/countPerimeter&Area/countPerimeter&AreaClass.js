@@ -4,9 +4,6 @@ class Figure {
             throw new Error("Abstract classes can't be instantiated.");
         }
     }
-
-    perimeter() { };
-    area() { };
 }
 
 class Rectangle extends Figure {

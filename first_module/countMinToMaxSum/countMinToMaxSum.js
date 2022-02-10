@@ -8,9 +8,7 @@ function countMinToMaxSum(min, max, callback) {
     let sum = 0;
 
     for (let i = min; i <= max; i++) {
-        if (callback(i)) {
-            sum += i;
-        }
+        callback(i) && (sum += i);
     }
     return sum;
 }

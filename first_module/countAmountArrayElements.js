@@ -1,5 +1,5 @@
 function countAmountArrayElements(array, callback) {
-    if (typeof array !== 'object' || array === null) {
+    if (!Array.isArray(array)) {
         throw new Error('Invalid argument');
     }
     if (typeof callback !== 'function') {
@@ -13,5 +13,4 @@ function countAmountArrayElements(array, callback) {
         }
     }
     return filteredArray.length;
-
 }
