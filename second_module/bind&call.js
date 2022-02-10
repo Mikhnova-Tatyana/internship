@@ -1,5 +1,5 @@
-function myBind(func, context) {
-    return function() {
+Function.prototype.customBind = function (func, context) {
+    return function () {
         let symbol = Symbol();
         context[symbol] = func;
         let result = context[symbol]();
