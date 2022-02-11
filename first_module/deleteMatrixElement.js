@@ -2,6 +2,9 @@ function deleteMatrixRowElement(matrix) {
     if (!Array.isArray(matrix)) {
         throw new Error('first parameter is not an array');
     }
+    if (matrix.length === 0) {
+        throw new Error('matrix length cannot be zero');
+    }
     let counter = 0;
 
     for (let i = 0; i < matrix.length; i++) {
@@ -21,6 +24,9 @@ function deleteMatrixRowElement(matrix) {
 function deleteMatrixColumnElement(matrix) {
     if (!Array.isArray(matrix)) {
         throw new Error('first parameter is not an array');
+    }
+    if (matrix.length === 0) {
+        throw new Error('matrix length cannot be zero');
     }
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix[i].length; j++) {

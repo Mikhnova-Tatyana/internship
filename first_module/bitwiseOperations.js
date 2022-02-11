@@ -2,7 +2,7 @@ function checkNumberIsPositive(number) {
     if (typeof number !== 'number') {
         throw new Error('Invalid argument');
     }
-    return ((number >> 31) & 1) !== 1
+    return ((number >> 31) & 1) !== 1;
 }
 
 function countBits(number) {

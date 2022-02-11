@@ -3,7 +3,7 @@ function factorial(number) {
         throw new Error('Invalid argument');
     }
     let result = 1;
-    while (number) {
+    while (number > 1) {
         result *= number--;
     }
     return result;
