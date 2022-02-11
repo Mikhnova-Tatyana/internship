@@ -12,17 +12,15 @@ function deleteMatrixRowElement(matrix) {
             if (matrix[i][j] === 0) {
                 counter++;
             }
-            if (counter > 0) {
-                matrix.splice(i, 1);
-                counter = 0;
-                i++;
-            }
-        }   
+        }
+        if (counter > 0) {
+            matrix.splice(i, 1);
+            counter = 0;
+            i--;
+        }
     }
     return matrix;
 }
-
-deleteMatrixRowElement([[0,0,0,0,0],[0,0,0,0,0]]);
 
 function deleteMatrixColumnElement(matrix) {
     if (!Array.isArray(matrix)) {
@@ -33,17 +31,23 @@ function deleteMatrixColumnElement(matrix) {
     }
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix[i].length; j++) {
-
             if (matrix[i][j] === 0) {
                 let column = j;
                 for (let k = 0; k < matrix.length; k++) {
                     matrix[k].splice(column, 1);
+                    j--;
                 }
-                j--;
             }
+        }
+        if (matrix[i].length === 0) {
+            matrix.splice(i--, 1);
         }
     }
     return matrix;
 }
 
-deleteMatrixColumnElement([[0,0,0,0,0],[0,0,0,0,0]]);
+deleteMatrixColumnElement([[1, 0, 3, 0, 5], [0, 2, 0, 4, 0], [0, 0, 0, 0, 0]]);
+deleteMatrixColumnElement([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]);
+deleteMatrixColumnElement([[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [0, 0, 0, 0, 0]]);
+deleteMatrixColumnElement([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]);
+deleteMatrixColumnElement([[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [0, 0, 0, 0, 0]]);
