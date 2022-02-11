@@ -3,7 +3,7 @@ function factorial(number) {
         throw new Error('Invalid argument');
     }
     let result = 1;
-    while (number > 1) {
+    while (number > 0) {
         result *= number--;
     }
     return result;
@@ -19,7 +19,7 @@ function factorialRecursion(number) {
     }
     if (number != 1) {
         return number * factorialRecursion(number - 1);
-    } 
+    }
     return 1;
 }
 
