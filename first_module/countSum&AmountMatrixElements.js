@@ -14,7 +14,6 @@ function countSumMatrixElements(matrix, callback) {
             }
         }
     }
-
     return sum;
 }
 
