@@ -39,15 +39,11 @@ function deleteMatrixColumnElement(matrix) {
                 }
             }
         }
-        if (matrix[i].length === 0) {
-            matrix.splice(i--, 1);
+        for (let l = 0; l < matrix.length; l++) {
+            if (matrix[l].length === 0) {
+                matrix.splice(l--, 1);
+            }
         }
     }
     return matrix;
 }
-
-deleteMatrixColumnElement([[1, 0, 3, 0, 5], [0, 2, 0, 4, 0], [0, 0, 0, 0, 0]]);
-deleteMatrixColumnElement([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]);
-deleteMatrixColumnElement([[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [0, 0, 0, 0, 0]]);
-deleteMatrixColumnElement([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]);
-deleteMatrixColumnElement([[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [0, 0, 0, 0, 0]]);
