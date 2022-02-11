@@ -15,11 +15,14 @@ function deleteMatrixRowElement(matrix) {
             if (counter > 0) {
                 matrix.splice(i, 1);
                 counter = 0;
+                i++;
             }
-        } 
+        }   
     }
     return matrix;
 }
+
+deleteMatrixRowElement([[0,0,0,0,0],[0,0,0,0,0]]);
 
 function deleteMatrixColumnElement(matrix) {
     if (!Array.isArray(matrix)) {
@@ -36,8 +39,11 @@ function deleteMatrixColumnElement(matrix) {
                 for (let k = 0; k < matrix.length; k++) {
                     matrix[k].splice(column, 1);
                 }
+                j--;
             }
         }
     }
     return matrix;
 }
+
+deleteMatrixColumnElement([[0,0,0,0,0],[0,0,0,0,0]]);
