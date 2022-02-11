@@ -1,6 +1,6 @@
 function countAverageArrayValue(array, callback) {
     if (!Array.isArray(array)) {
-        throw new Error('Invalid argument');
+        throw new Error('first parameter is not an array');
     }
     if (typeof callback !== 'function') {
         throw new Error('Callback is not a function');
@@ -22,7 +22,7 @@ function countAverageArrayValue(array, callback) {
 
 function countAverageMatrixValue(matrix, callback) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument');
+        throw new Error('first parameter is not an array');
     }
     if (typeof callback !== 'function') {
         throw new Error('Callback is not a function');

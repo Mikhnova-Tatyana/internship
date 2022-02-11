@@ -1,6 +1,6 @@
 function countSumMatrixElements(matrix, callback) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument');
+        throw new Error('first parameter is not an array');
     }
     if (typeof callback !== 'function') {
         throw new Error('Callback is not a function');
@@ -20,7 +20,7 @@ function countSumMatrixElements(matrix, callback) {
 
 function countAmountMatrixElements(matrix, callback) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument');
+        throw new Error('first parameter is not an array');
     }
     if (typeof callback !== 'function') {
         throw new Error('Callback is not a function');

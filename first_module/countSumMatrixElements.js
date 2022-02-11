@@ -1,6 +1,6 @@
 function countSumMatrixMainDiagonal(matrix) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument');
+        throw new Error('first parameter is not an array');
     }
     let result = 0;
 
@@ -18,7 +18,7 @@ function countSumMatrixMainDiagonal(matrix) {
 
 function countSumMatrixElements(matrix) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument');
+        throw new Error('first parameter is not an array');
     }
     let result = 0;
 
@@ -36,7 +36,7 @@ function countSumMatrixElements(matrix) {
 
 function countSumMatrixElements(matrix) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument');
+        throw new Error('first parameter is not an array');
     }
     let result = 0;
 
@@ -54,7 +54,7 @@ function countSumMatrixElements(matrix) {
  
 function countAmounMatrixMainDiagonal(matrix) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument');
+        throw new Error('first parameter is not an array');
     }
     let counter = 0;
 
@@ -72,7 +72,7 @@ function countAmounMatrixMainDiagonal(matrix) {
 
 function countAmounMatrixElements(matrix) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument');
+        throw new Error('first parameter is not an array');
     }
     let counter = 0;
 
@@ -90,7 +90,7 @@ function countAmounMatrixElements(matrix) {
 
 function countAmounMatrixElements(matrix) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument');
+        throw new Error('first parameter is not an array');
     }
     let counter = 0;
 
@@ -108,7 +108,7 @@ function countAmounMatrixElements(matrix) {
 
 function countAverageMatrixMainDiagonal(matrix) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument');
+        throw new Error('first parameter is not an array');
     }
     let counter = 0;
     let sum = 0;
@@ -128,7 +128,7 @@ function countAverageMatrixMainDiagonal(matrix) {
 
 function countAverageMatrixElements(matrix) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument');
+        throw new Error('first parameter is not an array');
     }
     let counter = 0;
     let sum = 0;
@@ -147,7 +147,7 @@ function countAverageMatrixElements(matrix) {
 
 function countAverageMatrixElements(matrix) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument');
+        throw new Error('first parameter is not an array');
     }
     let counter = 0;
     let sum = 0;
