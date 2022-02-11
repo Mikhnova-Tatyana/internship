@@ -1,47 +1,58 @@
 function Rectangle(width, heigth) {
+    if(width < 0 || heigth < 0) {
+        throw new Error('length and width must be greater than zero');
+    }
     this.width = width;
     this.heigth = heigth;
-
-    this.perimeter = function () {
-        return 2 * (this.width + this.heigth);
-    };
-    this.area = function () {
-        return this.width * this.heigth;
-    };
 }
 
+Rectangle.prototype.perimeter = function() {
+    return 2 * (this.width + this.heigth);
+};
+Rectangle.prototype.area = function() {
+    return this.width * this.heigth;
+};
+
 function Triangle(firstCathetus, secondCathetus, hypotenuse) {
+    if(firstCathetus < 0 || secondCathetus < 0 || hypotenuse < 0) {
+        throw new Error('argument must be greater than zero');
+    }
     this.firstCathetus = firstCathetus;
     this.secondCathetus = secondCathetus;
     this.hypotenuse = hypotenuse;
-
-    this.perimeter = function () {
-        return this.firstCathetus + this.secondCathetus + this.hypotenuse;
-    };
-    this.area = function () {
-        if (!(
-            this.firstCathetus + this.secondCathetus > this.hypotenuse &&
-            this.firstCathetus + this.hypotenuse > this.secondCathetus &&
-            this.secondCathetus + this.hypotenuse > this.firstCathetus
-        )) {
-            return false;
-        };
-        const semiPerimeter = (this.firstCathetus + this.secondCathetus + this.hypotenuse) / 2;
-        const area = Math.sqrt((semiPerimeter *
-            (semiPerimeter - this.firstCathetus) *
-            (semiPerimeter - this.secondCathetus) *
-            (semiPerimeter - this.hypotenuse)));
-        return area;
-    };
 }
 
-function Circle(radius) {
-    this.radius = radius;
+Triangle.prototype.perimeter = function() {
+    return this.firstCathetus + this.secondCathetus + this.hypotenuse;
+}
 
-    this.perimeter = function () {
-        return 2 * Math.PI * this.radius;
+Triangle.prototype.area = function() {
+    if (!(
+        this.firstCathetus + this.secondCathetus > this.hypotenuse &&
+        this.firstCathetus + this.hypotenuse > this.secondCathetus &&
+        this.secondCathetus + this.hypotenuse > this.firstCathetus
+    )) {
+        return false;
     };
-    this.area = function () {
-        return Math.PI * Math.pow(this.radius, 2);
-    };
+    const semiPerimeter = (this.firstCathetus + this.secondCathetus + this.hypotenuse) / 2;
+    const area = Math.sqrt((semiPerimeter *
+        (semiPerimeter - this.firstCathetus) *
+        (semiPerimeter - this.secondCathetus) *
+        (semiPerimeter - this.hypotenuse)));
+    return area;
+};
+
+
+function Circle(radius) {
+    if(radius < 0 ) {
+        throw new Error('argument must be greater than zero');
+    }
+    this.radius = radius;
+}
+
+Circle.prototype.perimeter = function() {
+    return 2 * Math.PI * this.radius;
+}
+Circle.prototype.area = function(){
+    return Math.PI * Math.pow(this.radius, 2);
 }
