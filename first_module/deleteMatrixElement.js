@@ -1,6 +1,6 @@
 function deleteMatrixRowElement(matrix) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument');
+        throw new Error('first parameter is not an array');
     }
     let counter = 0;
 
@@ -9,24 +9,23 @@ function deleteMatrixRowElement(matrix) {
             if (matrix[i][j] === 0) {
                 counter++;
             }
-        }
-        if (counter > 0) {
-            matrix.splice(i, 1);
-            counter = 0;
-        }
+            if (counter > 0) {
+                matrix.splice(i, 1);
+                counter = 0;
+            }
+        } 
     }
-    return array;
+    return matrix;
 }
-
 
 function deleteMatrixColumnElement(matrix) {
     if (!Array.isArray(matrix)) {
-        throw new Error('Invalid argument');
+        throw new Error('first parameter is not an array');
     }
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix[i].length; j++) {
 
-            if (array[i][j] === 0) {
+            if (matrix[i][j] === 0) {
                 let column = j;
                 for (let k = 0; k < matrix.length; k++) {
                     matrix[k].splice(column, 1);
@@ -34,5 +33,5 @@ function deleteMatrixColumnElement(matrix) {
             }
         }
     }
-    return array;
+    return matrix;
 }
