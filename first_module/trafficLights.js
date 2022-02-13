@@ -9,17 +9,17 @@ const trafficLights = {
             colors: this.colors,
             limit: this.limit,
             counter: 0,
-            i: 0,
+            index: 0,
             next() {
                 if (++this.counter <= this.limit) {
                     let result = {
-                        value: this.colors[this.i],
+                        value: this.colors[this.index],
                         done: false,
                     };
-                    if (this.i === 3) {
-                        this.i = 0;
+                    if (this.index === 3) {
+                        this.index = 0;
                     } else {
-                        ++this.i;
+                        ++this.index;
                     }
                     return result;
                 } else {
@@ -40,9 +40,9 @@ const trafficLights = {
 // }
 
 
-function* showColors(){
-    let colors = ['red','yellow','green','yellow'];
-    for(let color of colors){
+function* showColors() {
+    let colors = ['red', 'yellow', 'green', 'yellow'];
+    for (let color of colors) {
         yield color;
     }
 };

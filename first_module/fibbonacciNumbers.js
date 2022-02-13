@@ -23,11 +23,8 @@ let iterableFibonacciObject = {
 // }
 
 function fibonacciArrayRecurse(number, index, fibonacciArray) {
-    if (typeof number !== 'number' && typeof index !== 'number') {
+    if (typeof number !== 'number') {
         throw new Error('Invalid argument');
-    }
-    if (!Array.isArray(fibonacciArray)) {
-        throw new Error('third parameter is not an array');
     }
 
     index = index || 1;
@@ -48,9 +45,6 @@ const fibonacciArrayRecursionMemo = (function () {
     return function pushFibonacci(number, fibonacciArray) {
         if (typeof number !== 'number') {
             throw new Error('Invalid argument');
-        }
-        if (!Array.isArray(fibonacciArray)) {
-            throw new Error('second parameter is not an array');
         }
 
         fibonacciArray = fibonacciArray || [];

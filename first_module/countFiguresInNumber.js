@@ -2,17 +2,17 @@ function countFiguresInNumber(number) {
     if (typeof number !== 'number') {
         throw new Error('Invalid argument');
     }
-    const figures = [];
+    let counter = 0;
 
     while (number > 0) {
-        figures.unshift(number % 10);
-        number = number / 10 | 0;
+        number = parseInt(number / 10) | 0;
+        counter++;
     }
-    return figures.length;
+    return counter;
 }
 
 function countFiguresInNumberRecurse(number, counter) {
-    if (typeof number !== 'number' || typeof counter !== 'number') {
+    if (typeof number !== 'number') {
         throw new Error('Invalid argument');
     }
     counter = counter || 0;

@@ -19,7 +19,7 @@ function addMatrix(matrix1, matrix2) {
     if (!Array.isArray(matrix1) || !Array.isArray(matrix2)) {
         throw new Error('first or second parameter is not an array');
     }
-    if (matrix1.length === 0 || matrix2.length === 0 ) {
+    if (matrix1.length === 0 || matrix2.length === 0) {
         throw new Error('matrix length cannot be zero');
     }
     if (matrix1.length !== matrix2.length) {

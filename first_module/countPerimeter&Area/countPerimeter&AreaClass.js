@@ -16,7 +16,6 @@ class Rectangle extends Figure {
     perimeter() {
         return 2 * (this.width + this.heigth);
     };
-
     area() {
         return this.width * this.heigth;
     };
@@ -33,7 +32,6 @@ class Triangle extends Figure {
     perimeter() {
         return this.firstCathetus + this.secondCathetus + this.hypotenuse;
     };
-
     area() {
         if (!(
             this.firstCathetus + this.secondCathetus > this.hypotenuse &&

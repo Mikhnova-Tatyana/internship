@@ -33,6 +33,6 @@ function countSumArrayElementsRecurse(array, callback, index) {
 
     if (++index < array.length && callback(array[index])) {
         sum += countSumArrayElementsRecurse(array, callback, index);
-    } 
+    }
     return sum;
 }

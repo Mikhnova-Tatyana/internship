@@ -17,8 +17,11 @@ function countAverageArrayValue(array, callback) {
             sum += array[i];
         }
     }
-
-    return sum / counter;
+    if (counter > 0) {
+        return sum / counter;
+    } else {
+        return null;
+    }
 }
 
 
@@ -43,5 +46,9 @@ function countAverageMatrixValue(matrix, callback) {
             }
         }
     }
-    return sum / counter;
+    if (counter > 0) {
+        return sum / counter;
+    } else {
+        return null;
+    }
 }

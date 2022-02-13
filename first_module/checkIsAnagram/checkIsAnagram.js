@@ -32,14 +32,12 @@ function checkIsAnagram(firstWord, secondWord) {
     const firstCharObject = getCharObject(firstWord);
     const secondCharObject = getCharObject(secondWord);
 
-    let objectLength = Object.keys(firstCharObject).length
-
     for (let char in firstCharObject) {
         if (firstCharObject[char] !== secondCharObject[char]) {
             return false;
         }
-        return true;
     }
+    return true;
 }
 
 function getCharObject(word) {

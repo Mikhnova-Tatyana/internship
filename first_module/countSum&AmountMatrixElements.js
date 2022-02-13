@@ -2,9 +2,6 @@ function countSumMatrixElements(matrix, callback) {
     if (!Array.isArray(matrix)) {
         throw new Error('first parameter is not an array');
     }
-    if (matrix.length === 0) {
-        throw new Error('matrix length cannot be zero');
-    }
     if (typeof callback !== 'function') {
         throw new Error('Callback is not a function');
     }
@@ -24,9 +21,6 @@ function countAmountMatrixElements(matrix, callback) {
     if (!Array.isArray(matrix)) {
         throw new Error('first parameter is not an array');
     }
-    if (matrix.length === 0) {
-        throw new Error('matrix length cannot be zero');
-    }
     if (typeof callback !== 'function') {
         throw new Error('Callback is not a function');
     }
@@ -40,5 +34,4 @@ function countAmountMatrixElements(matrix, callback) {
         }
     }
     return counter;
-
 }

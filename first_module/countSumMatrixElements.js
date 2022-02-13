@@ -15,9 +15,9 @@ function countSumMatrixElements(matrix, callback) {
             if (callback(i, j)) {
                 result += matrix[i][j];
             }
-        }  
+        }
     }
-   
+
     return result;
 }
 
@@ -38,7 +38,7 @@ function countAmountZeroMatrixElements(matrix, callback) {
             if (callback(i, j) && matrix[i][j] === 0) {
                 counter++;
             }
-        }  
+        }
     }
 
     return counter;
@@ -63,8 +63,10 @@ function countAverageMatrixElements(matrix, callback) {
                 counter++;
                 sum += matrix[i][j];
             }
-        }  
+        }
     }
-    
-    return sum / counter;
+    if (counter > 0) {
+        return sum / counter;
+    }
+    return null;
 }
