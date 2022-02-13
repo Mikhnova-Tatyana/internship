@@ -19,10 +19,10 @@ function quickSort(array) {
         throw new Error('entered parameter is not an array');
     }
     if (array.length < 2) {
-        return array
+        return array;
     }
-    let index = Math.floor(array.length / 2)
-    let controlElement = array[index]
+    let index = Math.floor(array.length / 2);
+    let controlElement = array[index];
     let left = [];
     let right = [];
 
@@ -53,4 +53,4 @@ function insertionSort(array) {
         array[j] = currentElement;
     }
     return array;
-};
+}
