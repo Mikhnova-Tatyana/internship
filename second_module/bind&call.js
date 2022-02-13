@@ -1,11 +1,11 @@
-Function.prototype.customCall = function (context, ...arguments) {
+Function.prototype.customCall = function (context, arguments) {
     if (typeof context !== 'object') {
         context = {};
     }
     const func = this;
     let symbol = Symbol();
     context[symbol] = func;
-    let result = context[symbol](...arguments);
+    let result = context[symbol](arguments);
     delete context[symbol];
     return result;
 }
