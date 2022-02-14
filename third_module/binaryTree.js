@@ -139,7 +139,7 @@ class BinarySearchTree {
   constructor() {
       this.root = null;
   }
-
+  
   insert(data) {
     let newNode = new Node(data);
       if (this.root === null) {
@@ -148,14 +148,14 @@ class BinarySearchTree {
       } 
       let currentNode = this.root;
 
-      while(currentNode) {
+      while(currentNode > 0) {
         if(newNode.data < currentNode.data) {
           if(!currentNode.left) {
             currentNode.left = newNode;
             return;
           }
           currentNode = currentNode.left;
-         } else {
+          } else {
           if(!currentNode.right) {
             currentNode.right = newNode;
             return;
