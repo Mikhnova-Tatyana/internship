@@ -17,8 +17,8 @@ function countBits(number) {
       if ((number & 1 << i) === 1 << i) {
           ++countBitsObject.unitBits;
       } 
-        countBitsObject.zeroBits = 32 - countBitsObject.unitBits;
   }
+  countBitsObject.zeroBits = 32 - countBitsObject.unitBits;
   return countBitsObject;
 }
 
