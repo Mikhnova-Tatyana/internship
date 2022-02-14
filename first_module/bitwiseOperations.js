@@ -6,21 +6,20 @@ function checkNumberIsPositive(number) {
 }
 
 function countBits(number) {
-    if (typeof number !== 'number') {
-        throw new Error('Invalid argument');
-    }
-    const countBitsObject = {
-        zeroBits: 0,
-        unitBits: 0,
-    };
-    for (let i = 0; i < 32; i++) {
-        if ((number & 1 << i) === 1 << i) {
-            ++countBitsObject.unitBits;
-        } else {
-            ++countBitsObject.zeroBits;
-        }
-    }
-    return countBitsObject;
+  if (typeof number !== 'number') {
+      throw new Error('Invalid argument');
+  }
+  const countBitsObject = {
+      zeroBits: 0,
+      unitBits: 0,
+  };
+  for (let i = 0; i < 32; i++) {
+      if ((number & 1 << i) === 1 << i) {
+          ++countBitsObject.unitBits;
+      } 
+        countBitsObject.zeroBits = 32 - countBitsObject.unitBits;
+  }
+  return countBitsObject;
 }
 
 function bitwiseInvert(number) {

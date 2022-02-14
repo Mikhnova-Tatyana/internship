@@ -75,5 +75,5 @@ const fibonacciArrayRecursionMemo = (function () {
         }
 
         return fibonacciArray;
-    };
-})();
+    }
+})()

@@ -22,12 +22,11 @@ const trafficLights = {
                         ++this.index;
                     }
                     return result;
-                } else {
-                    return {
-                        value: undefined,
-                        done: true,
-                    };
-                };
+                }
+                  return {
+                      value: undefined,
+                      done: true,
+                  };
             },
         };
     },
@@ -41,11 +40,11 @@ const trafficLights = {
 
 
 function* showColors() {
-    let colors = ['red', 'yellow', 'green', 'yellow'];
+  let colors = ['red', 'yellow', 'green', 'yellow'];
     for (let color of colors) {
-        yield color;
+      yield color;
     }
-};
+}
 
 function* trafficLights(limit) {
     let counter = 0;
