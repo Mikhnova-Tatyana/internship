@@ -11,14 +11,14 @@ class BinTree {
   constructor() {
     this.root = null;
   }
-  
+
   insert(newNode) {
     // Если корень дерева пуст
     if (this.root === null) {
       this.root = newNode;
       return;
     }
-    
+
     function _insert(currentNode) {
       if (newNode.data < currentNode.data) {
         if (currentNode.leftChild !== null) {
@@ -39,9 +39,9 @@ class BinTree {
     // Ищем куда вставить, стартуем с корня
     _insert(this.root);
   }
-  
+
   search(data) {
-    
+
     function _search(currentNode) {
       if (currentNode === null)
         return null;
@@ -54,7 +54,7 @@ class BinTree {
     }
     return _search(this.root);
   }
-  
+
   delete(data) {
     // Для удаления элемента с одним, или нулем, наследников
     function deleteOneOrNoChildElem(node) {
@@ -63,7 +63,7 @@ class BinTree {
         newNode = node.leftChild;
       else if (node.rightChild)
         newNode = node.rightChild;
-      
+
       if (node.parent === null) {
         this.root = newNode;
       } else {
@@ -85,7 +85,7 @@ class BinTree {
       deleteOneOrNoChildElem(result);
       let leftNodeChild = node.leftChild;
       let rightNodeChild = node.rightChild;
-      
+
       if (node.parent === null) {
         result.leftChild = leftNodeChild;
         result.rightChild = rightNodeChild;
@@ -102,7 +102,7 @@ class BinTree {
         }
       }
     }
-    
+
     let node = this.search(data);
     if (node.leftChild && node.rightChild) {
       deleteTwoChildElem.call(this, node);
@@ -110,7 +110,7 @@ class BinTree {
     else {
       deleteOneOrNoChildElem.call(this, node);
     }
-  
+
   }
 }
 
@@ -129,40 +129,40 @@ binTree.delete(20)
 
 class Node {
   constructor(data) {
-      this.data = data;
-      this.left = null;
-      this.right = null;
+    this.data = data;
+    this.left = null;
+    this.right = null;
   }
 }
 
 class BinarySearchTree {
   constructor() {
-      this.root = null;
+    this.root = null;
   }
-  
+
   insert(data) {
     let newNode = new Node(data);
-      if (this.root === null) {
-        this.root = newNode;
-        return;
-      } 
-      let currentNode = this.root;
+    if (this.root === null) {
+      this.root = newNode;
+      return;
+    }
+    let currentNode = this.root;
 
-      while(currentNode > 0) {
-        if(newNode.data < currentNode.data) {
-          if(!currentNode.left) {
-            currentNode.left = newNode;
-            return;
-          }
-          currentNode = currentNode.left;
-          } else {
-          if(!currentNode.right) {
-            currentNode.right = newNode;
-            return;
-          }
-          currentNode = currentNode.right;
-         }
+    while (currentNode > 0) {
+      if (newNode.data < currentNode.data) {
+        if (!currentNode.left) {
+          currentNode.left = newNode;
+          return;
+        }
+        currentNode = currentNode.left;
+      } else {
+        if (!currentNode.right) {
+          currentNode.right = newNode;
+          return;
+        }
+        currentNode = currentNode.right;
       }
+    }
   }
 }
 
