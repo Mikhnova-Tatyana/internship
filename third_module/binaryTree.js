@@ -114,89 +114,125 @@ class BinTree {
   }
 }
 
-let binTree = new BinTree();
-binTree.insert(new Node(10))
-binTree.insert(new Node(20))
-binTree.insert(new Node(-10))
-binTree.insert(new Node(30))
-binTree.insert(new Node(41))
-binTree.insert(new Node(25))
-console.log(binTree);
-console.log(binTree.search(41));
-binTree.delete(20)
+
+
 
 
 
 class Node {
-  constructor(data) {
-    this.data = data;
-    this.left = null;
-    this.right = null;
+  #value; 
+  #left; 
+  #right; 
+    constructor() { 
+      this.#value = null; 
+      this.#right = null; 
+      this.#left = null;
+    } 
+
+  insert(value, node) { 
+      node = node || this; 
+      if (!node.#value) { 
+        node.#value = value; 
+        return value; 
+      } 
+      if (value > node.#value) { 
+        if (!node.#right) { 
+          node.#right = new Node(); 
+        } 
+        return this.insert(value, node.#right); 
+      } else { 
+        if (!node.#left) { 
+          node.#left = new Node(); 
+        } 
+        return this.insert(value, node.#left); 
+      } 
+    } 
+
+  search(value, node) { 
+    node = node || this; 
+    if (value > node.#value) { 
+      if (!node.#right) { 
+        return false; 
+      } 
+      return this.search(value, node.#right); 
+    } else if (value < node.#value) { 
+      if (!node.#left) { 
+        return false; 
+      } 
+      return this.search(value, node.#left); 
+    } else { 
+      return true;
+    } 
+  } 
+
+  findMinElement(node) {
+    node = node || this; 
+    if (!node.#left) {
+      return node;
+    }
+    return this.findMinElement(node.#left);
+  }
+
+  delete(value, node){
+    node = node || this; 
+    if (value > node.#value) { 
+      if (!node.#right) { 
+        return false; 
+      } 
+      node.#right = this.delete(value, node.#right); 
+      return node; 
+    } else if (value < node.#value) { 
+      if (!node.#left) { 
+        return false; 
+      } 
+      node.#left = this.delete(value, node.#left); 
+      return node; 
+    } else {
+        node = node || this; 
+        if (!node.#left && !node.#right) {
+        node = null;
+        return node; 
+        } else if(!node.#left) {
+          node = node.#right;
+          return node;
+        } else if(!node.#right) {
+          node = node.#left;
+          return node;
+        } else {
+          let minElement = this.findMinElement(node.#right);
+          node.#value = minElement.#value; 
+          node.#right = this.delete(minElement.#value, node.#right); 
+          return node;
+        }
+    }
   }
 }
 
-class BinarySearchTree {
-  constructor() {
-    this.root = null;
-  }
 
-  insert(data) {
-    let newNode = new Node(data);
-    if (this.root === null) {
-      this.root = newNode;
-      return;
-    }
-    let currentNode = this.root;
+    
+  
 
-    while (currentNode > 0) {
-      if (newNode.data < currentNode.data) {
-        if (!currentNode.left) {
-          currentNode.left = newNode;
-          return;
-        }
-        currentNode = currentNode.left;
-      } else {
-        if (!currentNode.right) {
-          currentNode.right = newNode;
-          return;
-        }
-        currentNode = currentNode.right;
-      }
-    }
-  }
-}
-
-
-const tree = new BinarySearchTree();
-tree.insert(8);
-tree.insert(11);
-tree.insert(15);
+let tree = new Node;
 tree.insert(6);
+tree.insert(5);
+tree.insert(4);
+tree.insert(3);
+tree.insert(-1);
+tree.insert(-2);
+tree.insert(10);
+tree.insert(18);
+tree.insert(1);
+tree.insert(2);
 
 
-  // insert(data) {
-  //   let newNode = new Node(data);
-  //   if (this.root === null) {
-  //       this.root = newNode;
-  //   } else {
-  //       this.insertNode(this.root, newNode); // helper method below
-  //   }
-  // }
-
-  // insertNode(node, newNode) {
-  //   if (newNode.data < node.data) {
-  //       if (node.left === null) {
-  //           node.left = newNode;
-  //       } else {
-  //           this.insertNode(node.left, newNode);
-  //       }
-  //   } else {
-  //       if (node.right === null) {
-  //           node.right = newNode;
-  //       } else {
-  //           this.insertNode(node.right, newNode);
-  //       }
-  //   }
-  // }
-
-
+let tree = new Node;
+tree.add(6);
+tree.add(5);
+tree.add(4);
+tree.add(3);
+tree.add(-1);
+tree.add(-2);
+tree.add(10);
+tree.add(18);
+tree.add(1);
+tree.add(2);
