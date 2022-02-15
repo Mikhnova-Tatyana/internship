@@ -34,7 +34,7 @@ function quickSort(array) {
       more.push(array[i]);
     } else {
       less.push(array[i]);
-    } 
+    }
   }
 
   return quickSort(less).concat(controlElement, quickSort(more))
@@ -57,53 +57,24 @@ function insertionSort(array) {
 }
 
 
-function merge(firstArray, secondArray) {
-  const arrSort = [];
-  let i = 0;
-  let j = 0;
-  while (i < firstArray.length && j < secondArray.length) {
-      arrSort.push(
-          if(firstArray[i] < secondArray[j]) {
-            firstArray[i++];
-          }
-           secondArray[j++];
-      )}
-  return [
-      ...arrSort,
-      ...arrFirst.slice(i),
-      ...arrSecond.slice(j)
-  ];
-}
-
-function mergeSort(array){
-  if (!array || !array.length) {
-      return null;
+const findMinIndex = (arr) => {
+  let minIndex = 0;
+  for (let i = 0; i < arr.length; i += 1) {
+    const element = arr[i];
+    const minElement = arr[minIndex];
+    if (element < minElement) {
+      minIndex = i;
+    }
   }
-  if (array.length <= 1) {
-      return arr;
-  }
-  const controlElement = Math.floor(arr.length / 2);
-  const leftArray = arr.slice(0, controlElement);
-  const rightArray = arr.slice(controlElement);
-  return merge(mergeSort(leftArray), mergeSort(rightArray));;
+  return minIndex;
 };
 
-
-const merge = (arrFirst, arrSecond) => {
-  const arrSort = [];
-  let i = j = 0;
-  // сравниваем два массива, поочередно сдвигая указатели
-  while (i < arrFirst.length && j < arrSecond.length) {
-      arrSort.push(
-          (arrFirst[i] < arrSecond[j]) ?
-              arrFirst[i++] : arrSecond[j++]
-      );
+const selectionSort = (arr) => {
+  const result = [];
+  while (arr.length !== 0) {
+    const minIndex = findMinIndex(arr);
+    result.push(arr[minIndex]);
+    arr.splice(minIndex, 1);
   }
-  // обрабатываем последний элемент при разной длине массивов
-  // и возвращаем один отсортированный массив
-  return [
-      ...arrSort,
-      ...arrFirst.slice(i),
-      ...arrSecond.slice(j)
-  ];
+  return result;
 };
