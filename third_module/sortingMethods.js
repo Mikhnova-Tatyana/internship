@@ -1,7 +1,7 @@
-Array.prototype.bubbleSort = function(){
+Array.prototype.bubbleSort = function (callback) {
   for (let i = 0; i < this.length; i++) {
     for (let j = 0; j < this.length - 1 - i; j++) {
-      if (this[j] > this[j + 1]) {
+      if (callback(this[j], this[j + 1])) {
         let temp = this[j];
         this[j] = this[j + 1];
         this[j + 1] = temp;
@@ -11,9 +11,10 @@ Array.prototype.bubbleSort = function(){
   return this;
 }
 
-[10, -100, 20, -9, 15, -900, 34, 6, 48, 555].bubbleSort()
+[10, -100, 20, -9, 15, -900, 34, 6, 48, 555].bubbleSort((a, b) => a > b)
+[{ a: 1 }, { a: 10 }, { a: 4 }, { a: 7 }].bubbleSort((firstElement, secondElement) => firstElement.a > secondElement.a)
 
-Array.prototype.quickSort = function() {
+Array.prototype.quickSort = function () {
   if (this.length <= 1) {
     return this;
   }
@@ -38,7 +39,7 @@ Array.prototype.quickSort = function() {
 [10, -100, 20, -9, 15, -900, 34, 6, 48, 555].quickSort()
 
 
-Array.prototype.findMinIndex = function() {
+Array.prototype.findMinIndex = function () {
   let minIndex = 0;
   for (let i = 0; i < this.length; i++) {
     if (this[i] < this[minIndex]) {
@@ -48,7 +49,7 @@ Array.prototype.findMinIndex = function() {
   return minIndex;
 }
 
-Array.prototype.selectionSort = function() {
+Array.prototype.selectionSort = function () {
   let result = [];
   while (this.length > 0) {
     let minIndex = this.findMinIndex();
@@ -59,5 +60,3 @@ Array.prototype.selectionSort = function() {
 }
 
 [10, -100, 20, -9, 15, -900, 34, 6, 48, 555].selectionSort()
-
-[{a: 1},{a: 10},{a: 7},{a: 4}]
