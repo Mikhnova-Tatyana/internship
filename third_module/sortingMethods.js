@@ -14,6 +14,7 @@ function bubbleSort(array) {
   return array;
 }
 
+
 function quickSort(array) {
   if (!Array.isArray(array)) {
     throw new Error('entered parameter is not an array');
@@ -23,58 +24,45 @@ function quickSort(array) {
   }
   let index = Math.floor(array.length / 2);
   let controlElement = array[index];
-  let less = [];
-  let more = [];
+  let leftArray = [];
+  let rightArray = [];
 
   for (let i = 0; i < array.length; i++) {
     if (array[i] === controlElement) {
       continue;
     }
-    if (array[i] > controlElement) {
-      more.push(array[i]);
+    if (array[i] < controlElement) {
+      leftArray.push(array[i]);
     } else {
-      less.push(array[i]);
+      rightArray.push(array[i]);
     }
   }
-
-  return quickSort(less).concat(controlElement, quickSort(more))
+  return quickSort(leftArray).concat(controlElement, quickSort(rightArray));
 }
 
-function insertionSort(array) {
+
+function findMinIndex(array) {
   if (!Array.isArray(array)) {
     throw new Error('entered parameter is not an array');
   }
-  for (let i = 1; i < array.length; i++) {
-    let currentElement = array[i];
-    let j = i;
-    while (j > 0 && array[j - 1] > currentElement) {
-      array[j] = array[j - 1];
-      j--;
-    }
-    array[j] = currentElement;
-  }
-  return array;
-}
-
-
-const findMinIndex = (arr) => {
   let minIndex = 0;
-  for (let i = 0; i < arr.length; i += 1) {
-    const element = arr[i];
-    const minElement = arr[minIndex];
-    if (element < minElement) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < array[minIndex]) {
       minIndex = i;
     }
   }
   return minIndex;
-};
+}
 
-const selectionSort = (arr) => {
-  const result = [];
-  while (arr.length !== 0) {
-    const minIndex = findMinIndex(arr);
-    result.push(arr[minIndex]);
-    arr.splice(minIndex, 1);
+function selectionSort(array) {
+  if (!Array.isArray(array)) {
+    throw new Error('entered parameter is not an array');
+  }
+  let result = [];
+  while (array.length > 0) {
+    let minIndex = findMinIndex(array);
+    result.push(array[minIndex]);
+    array.splice(minIndex, 1);
   }
   return result;
-};
+}
