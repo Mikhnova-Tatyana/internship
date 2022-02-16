@@ -24,20 +24,20 @@ function quickSort(array) {
   }
   let index = Math.floor(array.length / 2);
   let controlElement = array[index];
-  let leftArray = [];
-  let rightArray = [];
+  let left = [];
+  let right = [];
 
   for (let i = 0; i < array.length; i++) {
     if (array[i] === controlElement) {
       continue;
     }
     if (array[i] < controlElement) {
-      leftArray.push(array[i]);
+      left.push(array[i]);
     } else {
-      rightArray.push(array[i]);
+      right.push(array[i]);
     }
   }
-  return quickSort(leftArray).concat(controlElement, quickSort(rightArray));
+  return quickSort(left).concat(controlElement, quickSort(right));
 }
 
 
