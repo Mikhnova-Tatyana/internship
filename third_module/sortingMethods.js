@@ -1,68 +1,63 @@
-function bubbleSort(array) {
-  if (!Array.isArray(array)) {
-    throw new Error('entered parameter is not an array');
-  }
-  for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array.length - 1 - i; j++) {
-      if (array[j] > array[j + 1]) {
-        let temp = array[j];
-        array[j] = array[j + 1];
-        array[j + 1] = temp;
+Array.prototype.bubbleSort = function(){
+  for (let i = 0; i < this.length; i++) {
+    for (let j = 0; j < this.length - 1 - i; j++) {
+      if (this[j] > this[j + 1]) {
+        let temp = this[j];
+        this[j] = this[j + 1];
+        this[j + 1] = temp;
       }
     }
   }
-  return array;
+  return this;
 }
 
+[10, -100, 20, -9, 15, -900, 34, 6, 48, 555].bubbleSort()
 
-function quickSort(array) {
-  if (!Array.isArray(array)) {
-    throw new Error('entered parameter is not an array');
+Array.prototype.quickSort = function() {
+  if (this.length <= 1) {
+    return this;
   }
-  if (array.length <= 1) {
-    return array;
-  }
-  let index = Math.floor(array.length / 2);
-  let controlElement = array[index];
+  let index = Math.floor(this.length / 2);
+  let controlElement = this[index];
   let left = [];
   let right = [];
 
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] === controlElement) {
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] === controlElement) {
       continue;
     }
-    if (array[i] < controlElement) {
-      left.push(array[i]);
+    if (this[i] < controlElement) {
+      left.push(this[i]);
     } else {
-      right.push(array[i]);
+      right.push(this[i]);
     }
   }
-  return quickSort(left).concat(controlElement, quickSort(right));
+  return left.quickSort().concat(controlElement, right.quickSort());
 }
 
+[10, -100, 20, -9, 15, -900, 34, 6, 48, 555].quickSort()
 
-function findMinIndex(array) {
-  if (!Array.isArray(array)) {
-    throw new Error('entered parameter is not an array');
-  }
+
+Array.prototype.findMinIndex = function() {
   let minIndex = 0;
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] < array[minIndex]) {
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] < this[minIndex]) {
       minIndex = i;
     }
   }
   return minIndex;
 }
 
-function selectionSort(array) {
-  if (!Array.isArray(array)) {
-    throw new Error('entered parameter is not an array');
-  }
+Array.prototype.selectionSort = function() {
   let result = [];
-  while (array.length > 0) {
-    let minIndex = findMinIndex(array);
-    result.push(array[minIndex]);
-    array.splice(minIndex, 1);
+  while (this.length > 0) {
+    let minIndex = this.findMinIndex();
+    result.push(this[minIndex]);
+    this.splice(minIndex, 1);
   }
   return result;
 }
+
+[10, -100, 20, -9, 15, -900, 34, 6, 48, 555].selectionSort()
+
+[{a: 1},{a: 10},{a: 7},{a: 4}]
