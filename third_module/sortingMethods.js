@@ -1,4 +1,7 @@
 Array.prototype.bubbleSort = function (callback) {
+  if (typeof callback !== 'function') {
+    throw new Error('Callback is not a function');
+  }
   for (let i = 0; i < this.length; i++) {
     for (let j = 0; j < this.length - 1 - i; j++) {
       if (callback(this[j], this[j + 1])) {
@@ -12,6 +15,9 @@ Array.prototype.bubbleSort = function (callback) {
 }
 
 Array.prototype.selectionSort = function (callback) {
+  if (typeof callback !== 'function') {
+    throw new Error('Callback is not a function');
+  }
   let result = [];
   while (this.length > 0) {
     let index = 0;
