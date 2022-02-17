@@ -36,3 +36,11 @@ function checkIsValidPassword (password) {
 
 checkIsValidPassword('tyYB_6')
 
+function checkIpv4IsValid(ipv4String) {
+  if (typeof ipv4String !== 'string') {
+    throw new Error('Invalid argument');
+  }
+  return /^(([01]?\d\d?|2[0-4]\d|25[0-5])\.){3}([01]?\d\d?|2[0-4]\d|25[0-5])$/.test(ipv4String);
+}
+
+checkIpv4IsValid('127.255.255.255')
