@@ -7,36 +7,32 @@ function checkIsPhoneNumber(phoneNumber) {
 
 checkIsPhoneNumber('+28(090)496-77-90')
 
-// function checkIsSite(site) {
-//   if (typeof site !== 'string') {
-//     throw new Error('Invalid argument');
-//   }
-//   return /^https?\:/\/(\w+\.?)+$/igm/.test(site)
-// }
+function checkIsEmail(email) {
+  if (typeof email !== 'string') {
+    throw new Error('Invalid argument');
+  }
+  return 
+}
+
+checkIsEmail('kapitoshka@gmail.com')
+
+
+function checkIsSite(site) {
+  if (typeof site !== 'string') {
+    throw new Error('Invalid argument');
+  }
+  return /^https?\:\/\/(\w+\.?)+$/.test(site)
+}
 
 checkIsSite('http://test.dev')
 
-// /^https?\:(\w+\.?)+$/igm.test('http://test.dev')
 
-function checkIsValidPassword (string) {
-  let passwordPattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,25}$/;
-  return passwordPattern.test(string);
+function checkIsValidPassword (password) {
+  if (typeof password !== 'string') {
+    throw new Error('Invalid argument');
+  }
+  return /^[a-zA-Z0-9_]{6,25}$/.test(password);
 }
 
-// function addThousandsSeparators(value) {
-//   if (typeof value === 'string') {
-//       return value.replace(/(\d)(?=(\d{3})+([^\d]|$))/g, '$1,');
-//   } else {
-//       return value.toString().replace(/(\d)(?=(\d{3})+([^\d]|$))/g, '$1,');
-//   }
-// }
+checkIsValidPassword('tyYB_6')
 
-// function getAllUrlsFromText(text) {
-//   try {
-//       let res = text
-//           .match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_.~#?&//=]*)/g);
-//       return res || []
-//   } catch(error) {
-//       return error
-//   }
-// }
