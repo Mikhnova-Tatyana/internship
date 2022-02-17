@@ -18,16 +18,16 @@ Array.prototype.selectionSort = function (callback) {
   if (typeof callback !== 'function') {
     throw new Error('Callback is not a function');
   }
-  let result = [];
-  while (this.length > 0) {
-    let index = 0;
-    for (let i = 0; i < this.length; i++){
-      if (callback(this[i], this[index])){
-        index = i;
+  for (let i = 0; i < this.length - 1; i++) {
+    let index = i;
+    for (let j = i + 1; j < this.length; j++) {
+      if (callback(this[j], this[index])) {
+        index = j;
       }
     }
-    result.push(this[index]);
-    this.splice(index, 1);
+    let temp = this[i];
+    this[i] = this[index];
+    this[index] = temp;
   }
-  return result;
+  return this;
 }

@@ -374,3 +374,22 @@ Array.prototype.quickSort = function () {
 }
 
 [10, -100, 20, -9, 15, -900, 34, 6, 48, 555].quickSort()
+
+
+Array.prototype.selectionSort = function (callback) {
+  if (typeof callback !== 'function') {
+    throw new Error('Callback is not a function');
+  }
+  let result = [];
+  while (this.length > 0) {
+    let index = 0;
+    for (let i = 0; i < this.length; i++){
+      if(callback(this[i], this[index])){
+        index = i;
+      }
+    }
+    result.push(this[index]);
+    this.splice(index, 1);
+  }
+  return result;
+}
