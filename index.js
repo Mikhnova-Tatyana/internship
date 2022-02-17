@@ -326,3 +326,51 @@ let symbols = Object.getOwnPropertySymbols(obj);
 
 console.log(obj[symbols[0]]);
 
+// Сортировка
+
+Array.prototype.findMinIndex = function () {
+  let minIndex = 0;
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] < this[minIndex]) {
+      minIndex = i;
+    }
+  }
+  return minIndex;
+}
+
+Array.prototype.selectionSort = function () {
+  let result = [];
+  while (this.length > 0) {
+    let minIndex = this.findMinIndex();
+    result.push(this[minIndex]);
+    this.splice(minIndex, 1);
+  }
+  return result;
+}
+
+[10, -100, 20, -9, 15, -900, 34, 6, 48, 555].selectionSort()
+
+
+Array.prototype.quickSort = function () {
+  if (this.length <= 1) {
+    return this;
+  }
+  let index = Math.floor(this.length / 2);
+  let controlElement = this[index];
+  let left = [];
+  let right = [];
+
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] === controlElement) {
+      continue;
+    }
+    if (this[i] < controlElement) {
+      left.push(this[i]);
+    } else {
+      right.push(this[i]);
+    }
+  }
+  return left.quickSort().concat(controlElement, right.quickSort());
+}
+
+[10, -100, 20, -9, 15, -900, 34, 6, 48, 555].quickSort()
